@@ -2,8 +2,6 @@
 $title = "Connexion";
 include '../briques/html/header.php';
 include '../briques/html/menu.php';
-?>
-
-<?php
+include '../briques/html/formconnect.php';
 include '../briques/html/footer.php';
    

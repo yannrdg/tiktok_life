@@ -47,7 +47,8 @@ try
             echo "Il manque des informations";
         }
     }
-} catch(PPDOException $Exception)
+} 
+catch(PPDOException $Exception)
 {
     echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
 }
