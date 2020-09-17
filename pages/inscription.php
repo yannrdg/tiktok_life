@@ -1,8 +1,6 @@
 <?php
 $title = "Inscription";
-include '../briques/php/header.php';
-include '../briques/php/menu.php';
-?>
-
-<?php
-include '../briques/php/footer.php';
+include '../briques/html/header.php';
+include '../briques/html/menu.php';
+include '../briques/html/formincription.php';
+include '../briques/html/footer.php';

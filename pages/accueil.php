@@ -1,8 +1,8 @@
 <?php
 $title = "Accueil";
-include '../briques/php/header.php';
-include '../briques/php/menu.php';
+include '../briques/html/header.php';
+include '../briques/html/menu.php';
 ?>
 
 <?php
-include '../briques/php/footer.php';
+include '../briques/html/footer.php';
