@@ -13,11 +13,13 @@ try
     {
         if(!empty($login) && !empty($mail) && !empty($mdp))
         {
+            //Recherche si le mail est déjà existant
             $reqMail = $bdd->prepare("SELECT mail FROM Utilisateur WHERE mail = ?");
             $reqMail->execute(array($mail));
             $mailExist = $reqMail->rowCount();
             if($mailExist == 0)
             {
+                //Recherche si le login est déjà existant
                 $reqLogin = $bdd->prepare("SELECT login FROM Utilisateur WHERE login = ?");
                 $reqLogin->execute(array($login));
                 $loginExist = $reqLogin->rowCount();
