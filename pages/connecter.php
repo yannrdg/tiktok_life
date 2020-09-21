@@ -36,7 +36,7 @@ try
             }
             else
             {
-                echo 'no';
+                header('Location: connexion.php?erreur=badId');
             }
         }
     }
