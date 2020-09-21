@@ -3,5 +3,12 @@ session_start();
 $title = "Accueil";
 include '../briques/html/header.php';
 include '../briques/html/menu.php';
-echo $_SESSION['login'];
+if(isset($_SESSION['login']))
+{
+    echo "ok";
+}
+else 
+{
+    echo "no";
+}
 include '../briques/html/footer.php';
