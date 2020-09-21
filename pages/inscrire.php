@@ -34,17 +34,17 @@ try
                 }
                 else
                 {
-                    echo "Ce login n'est pas disponible";
+                    header('Location: inscription.php?erreur=loginNo');
                 }
             }
             else
             {
-                echo "Vous possédez déjà un compte !";
+                header('Location: inscription.php?erreur=userCompte');
             }
         }
         else
         {
-            echo "Il manque des informations";
+            header('Location: inscription.php?erreur=mqueInfo');
         }
     }
 } 
