@@ -1,5 +1,4 @@
 <?php
-session_start();
 $title = "Accueil";
 include '../briques/html/header.php';
 include '../briques/html/menu.php';
