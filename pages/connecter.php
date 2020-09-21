@@ -8,6 +8,7 @@ try
     $identifiant = $_POST['identifiant'];
     $btnConnect = $_POST['btnConnect'];
 
+    //Récuperer le mdp dans la bdd du login mis dans le formulaire
     $reqMdp = $bdd->prepare("SELECT mdp FROM Utilisateur WHERE login = ? || mail = ?");
     $exe = $reqMdp->execute(array($identifiant, $identifiant));
     $mdp = $reqMdp->fetchAll();
@@ -19,14 +20,19 @@ try
     {
         if(!empty($identifiant) && !empty($mdpConnect))
         {
+            //Voir si le mdp correspond au login mis
             if(password_verify($mdpConnect, $mdp[0][0]))
             {
                 $requser = $bdd->prepare("SELECT * FROM Utilisateur WHERE (login = ? || mail = ?)");
-                $requser->execute(array($idconnnect, $identifiant));
-                $userinfo = $requser->fetch();
-                $_SESSION['login'] = $userinfo['login'];
-                $_SESSION['mail'] = $userinfo['mail'];
-                header('Location: accueil.php');
+                $requser->execute(array($identifiant, $identifiant));
+                $userexist = $requser->rowCount();
+                if($userexist == 1)
+                {
+                    $userinfo = $requser->fetch();
+                    $_SESSION['login'] = $userinfo['login'];
+                    $_SESSION['mail'] = $userinfo['mail'];
+                    header('Location: accueil.php');
+                }
             }
             else
             {
