@@ -10,4 +10,5 @@ else
 {
     echo "no";
 }
+include '../briques/html/post.php';
 include '../briques/html/footer.php';
