@@ -19,10 +19,31 @@
                 -63 61 -146 136 -185 167 -202 163 -512 336 -764 428 -153 56 -384 114 -561
                 141 -208 33 -591 33 -794 1 -275 -43 -500 -114 -740 -232 -576 -284 -993 -786
                 -1197 -1442 -18 -59 -35 -108 -38 -108 -3 0 -20 49 -38 108 -204 656 -621
-                1158 -1197 1442 -351 173 -673 249 -1085 255 -118 1 -235 1 -260 -1z"/>
-                </g>
+                1158 -1197 1442 -351 173 -673 249 -1085 255 -118 1 -235 1 -260 -1z" />
+                    </g>
                 </svg>
             </label>
         </div>
     </section>
+
+    <form action="../pages/poster.php" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="">Déposer votre image <i>(Au format jpg)</i> : </label>
+            <input type="file" name="file" value="déposez">
+        </div>
+        <input type="submit" name="ajout" value="Ajouter un article" id="ajout">
+    </form>
+    <p>
+    <?php
+    if($_GET["erreur"] == "pasPoster")
+    {
+        echo "Votre vidéo n'a pas pu être posté !";
+    }
+    else if($_GET["erreur"] == "badExt")
+    {
+        echo "Le fichier doit être une vidéo ou une photo";
+    }
+    ?>
+    </p>
+
 </main>
