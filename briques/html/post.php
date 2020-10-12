@@ -10,7 +10,7 @@ foreach($videos as $video):
         <img src="<?=$video['video']?>" alt="">
         <form action="../pages/commenter.php" method="post">
             <textarea name="com" id="com" cols="70" rows="5" placeholder="Commentaire"></textarea>
-            <input type="submit" name="publier" value="Publier">
+            <input type="submit" name="publier<?=$video['idPost']?>" value="Publier">
         </form>
     </div>
     <?php
