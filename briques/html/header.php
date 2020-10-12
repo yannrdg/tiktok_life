@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../briques/style/menu.css">
     <link rel="stylesheet" href="../briques/style/footer.css">
     <link rel="stylesheet" href="../briques/style/style.css">
+    <link rel="stylesheet" href="../briques/style/post.css">
     <title><?php echo $title; ?></title>
 </head>
 <body>

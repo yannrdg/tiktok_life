@@ -1,0 +1,5 @@
+.post>img{
+    width: 50%;
+    height: 5vw;
+    object-fit: cover;
+}
