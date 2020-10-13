@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="../briques/style/footer.css">
     <link rel="stylesheet" href="../briques/style/style.css">
     <link rel="stylesheet" href="../briques/style/post.css">
+    <script src="../briques/script/like.js" async></script>
     <title><?php echo $title; ?></title>
 </head>
 <body>
 <header>
-    <h1>TikTok</h1>
+    <h1>Mon portfolio</h1>
 </header>
