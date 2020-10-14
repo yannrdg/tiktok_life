@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="../briques/style/footer.css">
     <link rel="stylesheet" href="../briques/style/style.css">
     <link rel="stylesheet" href="../briques/style/post.css">
+    <link rel="stylesheet" href="../briques/style/formulaire.css">
     <script src="../briques/script/like.js" async></script>
     <title><?php echo $title; ?></title>
 </head>
 <body>
 <header>
-    <h1>Mon portfolio</h1>
+    <div>
+        <a href="accueil.php"><img src="../briques/medias/monogramme.png" alt="monogramme"></a>
+        <h1>Mon portfolio</h1>
+    </div>
+    <?php
+    include '../briques/html/menu.php';
+    ?>
 </header>
