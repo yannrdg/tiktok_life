@@ -9,16 +9,18 @@ $auteur = $video['auteur'];
 $idVideo = $video['idPost'];
 $btnPublier = $_POST['publier'];
 $commentaire = $_POST['com'];
+//Ajouter un com
 try
 {
     if(isset($_POST['publier'.$idVideo]))
     {
         $reqCom = $bdd->prepare("INSERT INTO Commentaire (auteur, idPost, commentaire) VALUES (?, ?, ?)");
         $reqCom->execute(array($auteur, $idVideo, $commentaire));
+        header('Location: accueil.php');
     }   
 } 
 catch(PPDOException $Exception)
 {
     echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
 }
-endforeach;  
+endforeach; 
