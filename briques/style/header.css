@@ -1,3 +1,33 @@
-header>h1{
-    color: blue;
+header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #133149;
+    position:fixed;
+    width: 100%;
+    padding: 1% 0;
+    height: 13vw;
+    top: 0;
+}
+
+header>div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-content: center;
+    height: auto;
+    grid-column: 2/3;
+}
+
+header>div>h1{
+    color: #E8E1D7;
+    font-family: "lato bold";
+    margin-bottom: 1vw;
+}
+
+header>div>a{
+    margin: auto;
+}
+
+header>div>a>img{
+    width: 6vw;
 }
