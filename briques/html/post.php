@@ -13,14 +13,17 @@ $exeCom = $reqCom->execute();
 $coms = $reqCom->fetchAll();
 ?>
 <div class="post">
-    <p><?=$video['auteur']?></p>
+    <section class="auteur">
+        <img src="../briques/medias/monogramme.png" alt="monogramme">
+        <h4><?=$video['auteur']?></h4>
+    </section>
     <img src="<?=$video['video']?>" alt="">
     <?php
     if($_SESSION['login'])
     {
     ?>
     <form action="../pages/commenter.php" method="post">
-        <textarea name="com" id="com" cols="60" rows="1" placeholder="Ajoutez un commentaire"></textarea>
+        <textarea name="com" id="com" placeholder="Ajoutez un commentaire"></textarea>
         <input type="submit" name="publier<?=$video['idPost']?>" value="Publier">
     </form>
     <?php
@@ -32,6 +35,7 @@ $coms = $reqCom->fetchAll();
     foreach($coms as $com):
         ?>
         <div>
+            <h5><?=$com['auteur']?></h5>
             <p><?=$com['commentaire']?></p>
         <?php
         if($com['auteur'] == $_SESSION['login'])
