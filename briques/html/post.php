@@ -4,19 +4,20 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $req = $bdd->prepare("SELECT * FROM Post");
 $exe = $req->execute();
 $videos = $req->fetchAll();
+
 foreach($videos as $video):
+
+$reqCom = $bdd->prepare("SELECT * FROM Post, Commentaire WHERE Commentaire.idPost = Post.idPost AND video = :video");
+$reqCom->bindParam(':video', $video['video']);
+$exeCom = $reqCom->execute();
+$coms = $reqCom->fetchAll();
 ?>
 <div class="post">
     <p><?=$video['auteur']?></p>
     <img src="<?=$video['video']?>" alt="">
     <?php
-        $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-        $reqCom = $bdd->prepare("SELECT commentaire FROM Post, Commentaire WHERE Commentaire.idPost = Post.idPost AND video = :video");
-        $reqCom->bindParam(':video', $video['video']);
-        $exeCom = $reqCom->execute();
-        $coms = $reqCom->fetchAll();
-        if($_SESSION['login'])
-        {
+    if($_SESSION['login'])
+    {
     ?>
     <form action="../pages/commenter.php" method="post">
         <textarea name="com" id="com" cols="60" rows="1" placeholder="Ajoutez un commentaire"></textarea>
@@ -32,12 +33,19 @@ foreach($videos as $video):
         ?>
         <div>
             <p><?=$com['commentaire']?></p>
-            <form action="../pages/commenter.php" method="post">
-                <input type="submit" value="Supprimer" name="supCom">
-            </form>
-        </div>
         <?php
-        endforeach;
+        if($com['auteur'] == $_SESSION['login'])
+        {
+        ?>
+            <form action="../pages/commenter.php" method="post">
+                <input type="submit" value="Supprimer<?=$com['idComment']?>" name="supCom<?=$com['idComment']?>">
+            </form>
+        <?php
+        }
+        ?>
+        </div>
+    <?php
+    endforeach;
     ?>
     <a href="../pages/like.php?t=like&id=<?=$video['idPost']?>">
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280.000000 1280.000000"

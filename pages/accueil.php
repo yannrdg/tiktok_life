@@ -17,5 +17,6 @@ include '../briques/html/formPost.php';
 ?>
 </main>
 <?php
+echo $_SESSION['login'];
 include '../briques/html/footer.php';
 
