@@ -1,7 +1,6 @@
 <?php
 include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $req = $bdd->prepare("SELECT * FROM Post");
 $exe = $req->execute();
 $videos = $req->fetchAll();
