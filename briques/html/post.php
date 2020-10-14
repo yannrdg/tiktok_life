@@ -30,7 +30,12 @@ foreach($videos as $video):
      }
     foreach($coms as $com):
         ?>
-        <p><?=$com['commentaire']?></p>
+        <div>
+            <p><?=$com['commentaire']?></p>
+            <form action="../pages/commenter.php" method="post">
+                <input type="submit" value="Supprimer" name="supCom">
+            </form>
+        </div>
         <?php
         endforeach;
     ?>
