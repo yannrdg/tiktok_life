@@ -1,14 +1,6 @@
 <?php
 $title = "Accueil";
 include '../briques/html/header.php';
-if(isset($_SESSION['login']))
-{
-    echo "ok";
-}
-else 
-{
-    echo "no";
-}
 ?>
 <main>
 <?php
@@ -17,6 +9,5 @@ include '../briques/html/formPost.php';
 ?>
 </main>
 <?php
-echo $_SESSION['login'];
 include '../briques/html/footer.php';
 
