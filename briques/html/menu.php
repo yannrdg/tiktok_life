@@ -1,6 +1,5 @@
 <nav>
     <ul>
-        <li><a href="accueil.php">Accueil</a></li>
         <?php
             if($_SESSION['mail'])
             {
