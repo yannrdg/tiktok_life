@@ -24,5 +24,3 @@ if(isset($_SESSION['login']))
     </p>
 <?php
 }
-?>
-</main>
