@@ -25,12 +25,6 @@ try
 
     if(isset($buttonSuivre))
     {
-        $reqSuivi = $bdd->prepare("SELECT * FROM Follow WHERE follower = :follower && user = :user");
-        $reqSuivi->bindParam(':follower', $follower);
-        $reqSuivi->bindParam(':user', $user);
-        $reqSuivi->execute();
-        $statutSuivi = $reqSuivi->rowCount();
-
         if($statutSuivi == 0)
         {
             $reqfo = $bdd->prepare("INSERT INTO Follow (follower, user) VALUES (:follower, :user)");
