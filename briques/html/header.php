@@ -19,6 +19,9 @@
 <header>
     <div>
         <a href="accueil.php"><img src="../briques/medias/monogramme.png" alt="monogramme"></a>
+        <form action="follow.php" method="post">
+            <input type="submit" name="btnStatut" value="Suivre">
+        </form>
         <h1>Mon portfolio</h1>
     </div>
     <?php
