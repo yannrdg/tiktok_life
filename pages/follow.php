@@ -5,17 +5,33 @@ try
     include 'config.php';
     $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);  
     $buttonSuivre = $_POST['btnStatut'];
-    $statut = "Suivre";
     $user = 'admin';
     $follower = $_SESSION['login'];
 
     if(isset($buttonSuivre))
     {
-        $reqfo = $bdd->prepare("INSERT INTO Follow (follower, user) VALUES (:follower, :user)");
-        $reqfo->bindParam(':follower', $follower);
-        $reqfo->bindParam(':user', $user);
-        $reqfo->execute();
-        header('Location: accueil.php');
+        $reqSuivi = $bdd->prepare("SELECT * FROM Follow WHERE follower = :follower && user = :user");
+        $reqSuivi->bindParam(':follower', $follower);
+        $reqSuivi->bindParam(':user', $user);
+        $reqSuivi->execute();
+        $statutSuivi = $reqSuivi->rowCount();
+
+        if($statutSuivi == 0)
+        {
+            $reqfo = $bdd->prepare("INSERT INTO Follow (follower, user) VALUES (:follower, :user)");
+            $reqfo->bindParam(':follower', $follower);
+            $reqfo->bindParam(':user', $user);
+            $reqfo->execute();
+            header('Location: accueil.php');
+        }
+        else if($statutSuivi == 1)
+        {
+            $supfo = $bdd->prepare("DELETE FROM Follow WHERE follower = :follower && user = :user");
+            $supfo->bindParam(':follower', $follower);
+            $supfo->bindParam(':user', $user);
+            $supfo->execute();
+            header('Location: accueil.php');
+        }
     }
 
 } 
