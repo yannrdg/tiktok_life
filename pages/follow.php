@@ -43,6 +43,12 @@ try
         }
     }
 
+    //Gestion du nombre d'abonnés
+    
+    $reqab = $bdd->prepare("SELECT * FROM Follow WHERE user = ?");
+    $reqab->execute(array($user));  
+    $nbrab = $reqab->rowCount();
+
 } 
 catch(PPDOException $Exception)
 {
@@ -51,5 +57,10 @@ catch(PPDOException $Exception)
 ?>
 
 <form action="" method="post">
-            <input type="submit" name="btnStatut" value="<?php echo $statut?>">
+    <input type="submit" name="btnStatut" value="<?php echo $statut?>">
 </form>
+
+<section>
+    <h3>Nombre d'abonnés</h3>
+    <p><?php echo $nbrab;?></p>
+</section>
