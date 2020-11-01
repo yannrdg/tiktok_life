@@ -24,3 +24,7 @@ catch(PPDOException $Exception)
     echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
 }
 ?>
+
+<form action="" method="post">
+            <input type="submit" name="btnStatut" value="<?php echo $statut?>">
+</form>
