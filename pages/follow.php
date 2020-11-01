@@ -8,6 +8,21 @@ try
     $user = 'admin';
     $follower = $_SESSION['login'];
 
+    $reqSuivi = $bdd->prepare("SELECT * FROM Follow WHERE follower = :follower && user = :user");
+    $reqSuivi->bindParam(':follower', $follower);
+    $reqSuivi->bindParam(':user', $user);
+    $reqSuivi->execute();
+    $statutSuivi = $reqSuivi->rowCount();
+
+    if($statutSuivi == 0)
+    {
+        $statut = "Suivre";
+    }
+    else if($statutSuivi == 1)
+    {
+        $statut = "Abonné";
+    }
+
     if(isset($buttonSuivre))
     {
         $reqSuivi = $bdd->prepare("SELECT * FROM Follow WHERE follower = :follower && user = :user");
