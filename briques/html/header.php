@@ -27,4 +27,5 @@
     <?php
         include '../briques/html/menu.php';
     ?>
+    <div id=ligne-sep></div>
 </header>
