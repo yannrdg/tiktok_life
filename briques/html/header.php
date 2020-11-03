@@ -17,14 +17,14 @@
 </head>
 <body>
 <header>
-    <div>
+    <?php
+        include 'follow.php';
+    ?>
+    <div id="titre">
         <a href="accueil.php"><img src="../briques/medias/monogramme.png" alt="monogramme"></a>
-        <?php
-            include 'follow.php';
-        ?>
         <h1>Mon portfolio</h1>
     </div>
     <?php
-    include '../briques/html/menu.php';
+        include '../briques/html/menu.php';
     ?>
 </header>

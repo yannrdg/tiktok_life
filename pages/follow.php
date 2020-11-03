@@ -56,11 +56,12 @@ catch(PPDOException $Exception)
 }
 ?>
 
-<form action="" method="post">
-    <input type="submit" name="btnStatut" value="<?php echo $statut?>">
-</form>
-
-<section>
-    <h3>Nombre d'abonnés</h3>
-    <p><?php echo $nbrab;?></p>
-</section>
+<div id="suivi">
+    <section>
+        <h3>Nombre d'abonnés</h3>
+        <p><?php echo $nbrab;?></p>
+    </section>
+    <form action="" method="post">
+        <input type="submit" name="btnStatut" value="<?php echo $statut?>">
+    </form>
+</div>
