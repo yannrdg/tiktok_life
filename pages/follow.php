@@ -16,11 +16,29 @@ try
 
     if($statutSuivi == 0)
     {
-        $statut = "Suivre";
+        $statut = "Suivre +";
+        ?>
+        <style>
+            #btn-follow
+            { 
+                background-color: #C5226D;
+                color: #E8E1D7;
+            }
+        </style>
+    <?php
     }
     else if($statutSuivi == 1)
     {
         $statut = "Abonné";
+    ?>
+        <style>
+            #btn-follow
+            { 
+                background-color: #F6A248;
+                color: #133149;
+            }
+        </style>
+    <?php
     }
 
     if(isset($buttonSuivre))
@@ -58,10 +76,17 @@ catch(PPDOException $Exception)
 
 <div id="suivi">
     <section>
-        <h3>Nombre d'abonnés</h3>
         <p><?php echo $nbrab;?></p>
+        <h3>Abonnés</h3>
     </section>
-    <form action="" method="post">
-        <input type="submit" name="btnStatut" value="<?php echo $statut?>">
-    </form>
+    <?php
+        if($_SESSION['login'])
+        {
+    ?>
+            <form action="" method="post">
+                <input type="submit" name="btnStatut" value="<?php echo $statut?>" id="btn-follow">
+            </form>
+    <?php
+        }
+    ?>
 </div>
