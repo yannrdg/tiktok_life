@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../briques/style/post.css">
     <link rel="stylesheet" href="../briques/style/formulaire.css">
     <script src="../briques/script/like.js" async></script>
+    <script src="../briques/script/menu.js" async></script>
     <title><?php echo $title; ?></title>
 </head>
 <body>
