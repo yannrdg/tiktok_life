@@ -23,7 +23,7 @@ $coms = $reqCom->fetchAll();
     {
     ?>
     <form action="../pages/commenter.php" method="post">
-        <textarea name="com" id="com" placeholder="Ajoutez un commentaire"></textarea>
+        <textarea name="com" class="com" placeholder="Ajoutez un commentaire"></textarea>
         <input type="submit" name="publier<?=$video['idPost']?>" value="Publier">
     </form>
     <?php
