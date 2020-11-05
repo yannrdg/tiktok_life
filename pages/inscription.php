@@ -26,5 +26,4 @@ else
     {
         echo "Il manque des informations";
     }
-    include '../briques/html/footer.php';
 }
