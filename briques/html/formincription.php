@@ -1,4 +1,4 @@
-<main>
+<main id="inscription">
     <fieldset>
         <legend>Inscription</legend>
         <form action="../pages/inscrire.php" method="post">
