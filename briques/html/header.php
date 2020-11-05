@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../briques/style/footer.css">
     <link rel="stylesheet" href="../briques/style/style.css">
     <link rel="stylesheet" href="../briques/style/post.css">
-    <link rel="stylesheet" href="../briques/style/formulaire.css">
+    <link rel="stylesheet" href="../briques/style/connexion.css">
     <script src="../briques/script/like.js" async></script>
     <title><?php echo $title; ?></title>
 </head>
