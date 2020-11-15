@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../briques/style/post.css">
     <link rel="stylesheet" href="../briques/style/connexion.css">
     <link rel="stylesheet" href="../briques/style/inscription.css">
-    <script src="../briques/script/like.js" async></script>
     <title><?php echo $title; ?></title>
 </head>
 <body>
