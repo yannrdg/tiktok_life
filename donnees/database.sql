@@ -1,10 +1,3 @@
-
---
--- Base de données :  `tiktok_like`
---
-
--- --------------------------------------------------------
-
 --
 -- Structure de la table `Commentaire`
 --
@@ -14,7 +7,7 @@ CREATE TABLE `Commentaire` (
   `auteur` varchar(100) NOT NULL,
   `idPost` int(3) NOT NULL,
   `commentaire` text NOT NULL,
-  `dataPublication` date NOT NULL
+  `dataPublication` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -47,11 +40,11 @@ CREATE TABLE `Jaime` (
 
 CREATE TABLE `Post` (
   `idPost` int(3) NOT NULL,
-  `message` text NOT NULL,
+  `message` text,
   `video` longblob NOT NULL,
-  `lien` varchar(60) NOT NULL,
+  `lien` varchar(60) DEFAULT NULL,
   `auteur` varchar(100) NOT NULL,
-  `dataPost` date NOT NULL
+  `dataPost` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -73,9 +66,9 @@ CREATE TABLE `Supprime` (
 
 CREATE TABLE `Utilisateur` (
   `login` varchar(100) NOT NULL,
-  `mdp` varchar(128) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `dataInscription` date NOT NULL
+  `mdp` varchar(128) NOT NULL,
+  `dataInscription` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
